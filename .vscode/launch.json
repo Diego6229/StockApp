@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "MainApp",
+      "request": "launch",
+      "mainClass": "stock.MainApp",
+      "projectName": "stock",
+      "cwd": "${workspaceFolder}/backend_Java"
+    }
+  ]
+}

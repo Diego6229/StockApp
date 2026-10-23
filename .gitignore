@@ -1,0 +1,25 @@
+# Dependencias y builds
+node_modules/
+target/
+build/
+dist/
+.gradle/
+.kotlin/
+
+# Build de React que genera Maven dentro del backend
+backend_Java/src/main/resources/static/
+
+# Configuración local
+local.properties
+.env
+*.local
+
+# IDEs (se mantiene .vscode con las tareas y el lanzador del proyecto)
+.idea/
+*.iml
+.claude/
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log

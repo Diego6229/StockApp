@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Iniciar StockApp",
+      "detail": "Compila React, arranca Spring Boot y abre el navegador en http://localhost:8080",
+      "type": "shell",
+      "command": "./mvnw spring-boot:run",
+      "windows": { "command": ".\\mvnw.cmd spring-boot:run" },
+      "options": { "cwd": "${workspaceFolder}/backend_Java" },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "panel": "dedicated" }
+    },
+    {
+      "label": "Compilar frontend",
+      "detail": "Genera el build de React dentro del backend (necesario antes de ejecutar MainApp con F5)",
+      "type": "shell",
+      "command": "npm install && npm run build",
+      "options": { "cwd": "${workspaceFolder}/frontend" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Frontend en modo desarrollo",
+      "detail": "Vite con recarga en caliente en http://localhost:1420 (el backend debe estar arrancado)",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": { "cwd": "${workspaceFolder}/frontend" },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "panel": "dedicated" }
+    }
+  ]
+}

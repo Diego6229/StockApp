@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Variante para pantallas de poca altura (portátiles): bajo:clase */
+@custom-variant bajo (@media (max-height: 880px));
+
 /* Animación de entrada suave (página de login) */
 @keyframes aparecer {
   from { opacity: 0; transform: translateY(12px); }

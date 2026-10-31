@@ -65,72 +65,75 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex bg-slate-50">
       {/* Panel izquierdo: presentación de la app */}
-      <aside className="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-slate-900 text-white flex-col justify-between gap-10 p-12">
-        <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-blue-600/30 blur-3xl" />
-        <div className="absolute -bottom-40 -right-24 w-[28rem] h-[28rem] rounded-full bg-indigo-600/25 blur-3xl" />
+      <aside className="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-slate-900 text-white p-12 bajo:py-8">
+        <div className="absolute -top-[15%] -left-[15%] w-[55%] aspect-square rounded-full bg-blue-600/30 blur-3xl" />
+        <div className="absolute -bottom-[20%] -right-[10%] w-[60%] aspect-square rounded-full bg-indigo-600/25 blur-3xl" />
 
-        <div className="relative flex items-center gap-3">
-          <img src="/Logo.png" alt="Logo" className="w-12 h-12 rounded-xl shadow-lg" />
-          <div>
-            <h1 className="text-lg font-bold leading-tight">StockApp</h1>
-            <p className="text-xs text-slate-400">Gestión de inventario</p>
-          </div>
-        </div>
-
-        <div className="relative max-w-md aparecer">
-          <h2 className="text-4xl font-bold leading-tight">
-            Controla tu inventario <span className="block text-blue-400">en un solo lugar</span>
-          </h2>
-          <p className="mt-4 text-slate-400">
-            Productos, ventas, usuarios y estadísticas de tu negocio, siempre al día.
-          </p>
-
-          <ul className="mt-8 flex flex-col gap-4">
-            {VENTAJAS.map(({ icono: Icono, titulo, texto }) => (
-              <li key={titulo} className="flex items-start gap-3">
-                <span className="flex items-center justify-center w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 text-blue-400 shrink-0">
-                  <Icono size={20} />
-                </span>
-                <div>
-                  <p className="font-medium">{titulo}</p>
-                  <p className="text-sm text-slate-400">{texto}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-
-          {/* Vista previa decorativa de las estadísticas */}
-          <div className="mt-10 rounded-2xl bg-white/5 border border-white/10 backdrop-blur p-5 shadow-2xl">
-            <div className="flex items-start justify-between">
-              <div>
-                <p className="text-xs uppercase tracking-wider text-slate-400">Recaudado este mes</p>
-                <p className="text-2xl font-bold mt-1">2.480,50 €</p>
-              </div>
-              <span className="flex items-center gap-1 text-xs font-medium text-emerald-400 bg-emerald-400/10 rounded-full px-2 py-1">
-                <TrendingUp size={14} /> +12%
-              </span>
+        {/* Columna centrada que crece con la pantalla */}
+        <div className="relative mx-auto w-full max-w-md xl:max-w-lg 2xl:max-w-xl flex flex-col justify-between gap-10 bajo:gap-6">
+          <div className="flex items-center gap-3">
+            <img src="/Logo.png" alt="Logo" className="w-12 h-12 rounded-xl shadow-lg" />
+            <div>
+              <h1 className="text-lg font-bold leading-tight">StockApp</h1>
+              <p className="text-xs text-slate-400">Gestión de inventario</p>
             </div>
-            <div className="mt-4 flex items-end gap-2 h-20">
-              {BARRAS.map((altura, i) => (
-                <div
-                  key={i}
-                  style={{ height: `${altura}%` }}
-                  className={`flex-1 rounded-t-md ${i === BARRAS.length - 2 ? "bg-blue-500" : "bg-slate-700"}`}
-                />
+          </div>
+
+          <div className="aparecer">
+            <h2 className="text-4xl 2xl:text-5xl bajo:text-3xl font-bold leading-tight">
+              Controla tu inventario <span className="block text-blue-400">en un solo lugar</span>
+            </h2>
+            <p className="mt-4 text-slate-400 2xl:text-lg">
+              Productos, ventas, usuarios y estadísticas de tu negocio, siempre al día.
+            </p>
+
+            <ul className="mt-8 bajo:mt-6 flex flex-col gap-4 bajo:gap-3">
+              {VENTAJAS.map(({ icono: Icono, titulo, texto }) => (
+                <li key={titulo} className="flex items-start gap-3">
+                  <span className="flex items-center justify-center w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 text-blue-400 shrink-0">
+                    <Icono size={20} />
+                  </span>
+                  <div>
+                    <p className="font-medium">{titulo}</p>
+                    <p className="text-sm text-slate-400">{texto}</p>
+                  </div>
+                </li>
               ))}
-            </div>
-            <div className="mt-4 flex items-center gap-2 text-xs text-amber-300 bg-amber-400/10 rounded-lg px-3 py-2">
-              <TriangleAlert size={14} /> 2 productos con stock bajo
+            </ul>
+
+            {/* Vista previa decorativa de las estadísticas */}
+            <div className="mt-10 bajo:mt-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur p-5 shadow-2xl">
+              <div className="flex items-start justify-between">
+                <div>
+                  <p className="text-xs uppercase tracking-wider text-slate-400">Recaudado este mes</p>
+                  <p className="text-2xl font-bold mt-1">2.480,50 €</p>
+                </div>
+                <span className="flex items-center gap-1 text-xs font-medium text-emerald-400 bg-emerald-400/10 rounded-full px-2 py-1">
+                  <TrendingUp size={14} /> +12%
+                </span>
+              </div>
+              <div className="mt-4 flex items-end gap-2 h-20 bajo:h-14">
+                {BARRAS.map((altura, i) => (
+                  <div
+                    key={i}
+                    style={{ height: `${altura}%` }}
+                    className={`flex-1 rounded-t-md ${i === BARRAS.length - 2 ? "bg-blue-500" : "bg-slate-700"}`}
+                  />
+                ))}
+              </div>
+              <div className="mt-4 flex items-center gap-2 text-xs text-amber-300 bg-amber-400/10 rounded-lg px-3 py-2">
+                <TriangleAlert size={14} /> 2 productos con stock bajo
+              </div>
             </div>
           </div>
-        </div>
 
-        <p className="relative text-xs text-slate-500">© 2026 StockApp · Proyecto TFG DAM</p>
+          <p className="text-xs text-slate-500">© 2026 StockApp · Diego Muñoz Jiménez</p>
+        </div>
       </aside>
 
       {/* Panel derecho: formulario */}
       <main className="flex-1 flex items-center justify-center p-6">
-        <div className="w-full max-w-sm aparecer">
+        <div className="w-full max-w-sm 2xl:max-w-md aparecer">
           <div className="flex lg:hidden items-center gap-3 mb-10">
             <img src="/Logo.png" alt="Logo" className="w-11 h-11 rounded-xl shadow" />
             <div>

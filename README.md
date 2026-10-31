@@ -21,7 +21,7 @@ Controla productos, categorías, ventas, usuarios y estadísticas desde una apli
 ---
 
 Proyecto de fin de grado (TFG) del ciclo de **Desarrollo de Aplicaciones Multiplataforma (DAM)**.
-Empezó como una aplicación de escritorio en JavaFX y la he migrado a una **arquitectura cliente-servidor**: un backend con API REST en Spring Boot y un frontend web en React. También incluye una app Android que usa la misma API.
+Empezó como una aplicación de escritorio en JavaFX y la he migrado a una **arquitectura cliente-servidor**: un backend con API REST en Spring Boot y un frontend web en React. También incluye una app Android que usa la misma API pensada para empleados.
 
 ![Dashboard](docs/capturas/dashboard.png)
 
@@ -41,7 +41,7 @@ Empezó como una aplicación de escritorio en JavaFX y la he migrado a una **arq
 
 | Módulo | Qué permite hacer | Rol |
 |---|---|---|
-| **Login** | Inicio de sesión con contraseñas cifradas con BCrypt | Todos |
+| **Login** | Inicio de sesión con contraseñas cifradas con BCrypt y acceso demo con un clic | Todos |
 | **Dashboard** | Resumen del negocio: productos, categorías, usuarios, ingresos del mes y avisos de stock bajo | Todos |
 | **Productos** | Listado con búsqueda y filtros, alta, edición y baja, registro de ventas (descuenta stock) y aviso de stock bajo | Todos |
 | **Categorías** | Alta, edición y baja de categorías (al borrar una se eliminan sus productos y movimientos) | Todos |
@@ -151,11 +151,12 @@ Abre http://localhost:1420. Las llamadas a `/api` se redirigen al backend.
 
 ## Usuarios de prueba
 
-Se crean automáticamente la primera vez que arranca la aplicación con la base de datos vacía:
+Se crean automáticamente la primera vez que arranca la aplicación con la base de datos vacía. También puedes usar los botones de **Acceso demo** de la pantalla de login, que rellenan los datos por ti:
 
 | Usuario | Contraseña | Rol |
 |---|---|---|
-| `Prueba` | `12345` | EMPLEADO (productos, categorías y ventas; sin acceso a usuarios ni estadísticas) |
+| `admin` | `admin123` | ADMIN (acceso completo) |
+| `empleado` | `empleado123` | EMPLEADO (productos, categorías y ventas; sin acceso a usuarios ni estadísticas) |
 
 ## API REST
 

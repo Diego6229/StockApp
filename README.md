@@ -157,7 +157,7 @@ Se crean automáticamente la primera vez que arranca la aplicación con la base 
 |---|---|---|
 | `admin` | `admin123` | ADMIN (acceso completo) |
 | `empleado` | `empleado123` | EMPLEADO (productos, categorías y ventas; sin acceso a usuarios ni estadísticas) |
-> Si no funciona, probar con | usuario: Prueba | Contraseña: 1234.
+> Si no funciona, probar --> usuario: Prueba | Contraseña: 1234.
 
 
 ## API REST
